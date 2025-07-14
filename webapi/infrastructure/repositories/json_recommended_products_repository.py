@@ -9,6 +9,7 @@ class JSONRecommendedProductsRepository(RecommendedProductsRepository):
         self.data_path = Path(data_path)
 
     def get_all_recommended_products(self) -> List[RecommendedProduct]:
-        with self.data_path.open() as f:
+        with self.data_path.open(encoding='utf-8') as f:
             data = json.load(f)
             return [RecommendedProduct(**item) for item in data]
+
