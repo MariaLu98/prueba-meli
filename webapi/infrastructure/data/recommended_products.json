@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Samsung Galaxy M55 5g 8/256gb Dual Sim",
+    "image": "https://images.samsung.com/is/image/...jpg",
+    "priceOld": 485,
+    "priceNew": 421.95,
+    "discount": 13,
+    "installments": "10 cuotas de $ 1.839,70 sin interés"
+  },
+  {
+    "id": "2",
+    "title": "Motorola Edge 50 Fusion 5g 256 Gb Azul Ártico 8 Gb Ram",
+    "image": "https://motorolaus.vtexassets.com/arquivos/...jpg",
+    "priceOld": 469,
+    "priceNew": 419,
+    "discount": 11,
+    "installments": "10 cuotas de $ 1.826,84 sin interés"
+  }
+]

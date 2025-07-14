@@ -2,9 +2,9 @@ from dataclasses import dataclass
 from typing import List
 from .seller import Seller
 from .features import Features
-
+from pydantic import BaseModel
 @dataclass
-class Product:
+class Product(BaseModel):
     id: str
     title: str
     price: float

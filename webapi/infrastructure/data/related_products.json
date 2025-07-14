@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Samsung Galaxy S25 256 Gb Garantía Oficial",
+    "image": "https://images.samsung.com/is/image/...jpg",
+    "priceOld": 1299,
+    "priceNew": 959,
+    "discount": 26,
+    "installments": "10 cuotas de $ 4.181,24 sin interés",
+    "envioGratis": true
+  },
+  {
+    "id": "2",
+    "title": "Samsung Galaxy S25 Plus 512 Gb Garantía Oficial",
+    "image": "https://images.samsung.com/is/image/...jpg",
+    "priceOld": 1699,
+    "priceNew": 1379,
+    "discount": 18,
+    "installments": "10 cuotas de $ 6.012,44 sin interés",
+    "envioGratis": true
+  }
+]
