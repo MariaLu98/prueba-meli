@@ -1,0 +1,77 @@
+.product-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.product-page-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.left-column,
+.right-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Producto con 2 sub-columns al 50% */
+.product-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.product-subsection {
+  width: 100%;
+}
+
+/* Layout de dos columnas en pantallas grandes */
+@media (min-width: 1024px) {
+  .product-page-columns {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .left-column {
+    flex: 0 0 65%;
+    max-width: 65%;
+  }
+
+  .right-column {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+
+  .product-section {
+    flex-direction: row;
+  }
+
+  .product-subsection {
+    flex: 1;
+  }
+}
+
+/* CARD COLORS - para visualizar fácilmente */
+.card-section {
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.card-right:nth-child(1) { background-color: #6fa8dc; }
+.card-right:nth-child(2) { background-color: #3d85c6; }
+.card-right:nth-child(3) { background-color: #0b5394; }
+.card-right:nth-child(4) { background-color: #073763; }
+
+.card-product-left { background-color: #93c47d; }
+.card-product-right { background-color: #6aa84f; }
+
+.card-samsung { background-color: #e69138; }
+.card-caracteristicas { background-color: #b45f06; }
+.card-descripcion { background-color: #783f04; }

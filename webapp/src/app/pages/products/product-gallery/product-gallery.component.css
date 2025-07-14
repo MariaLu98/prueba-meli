@@ -1,0 +1,27 @@
+.producto-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  align-items: flex-start;
+}
+
+.galeria-columna {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.info-columna {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Responsivo para móvil */
+@media (max-width: 768px) {
+  .producto-grid {
+    flex-direction: column;
+  }
+}

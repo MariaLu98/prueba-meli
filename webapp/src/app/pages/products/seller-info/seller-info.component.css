@@ -1,0 +1,110 @@
+.store-info {
+  max-width: 300px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 0;
+}
+
+.store-header-text {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #111;
+}
+
+.store-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.store-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.store-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.verified {
+  color: #3483fa;
+  font-size: 1rem;
+}
+
+.store-sub {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.store-products {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.store-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 0.75rem 0;
+}
+
+.store-indicators {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.indicator {
+  flex: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.indicator-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.15rem;
+}
+
+.indicator-label {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.indicator i {
+  font-size: 1rem;
+  color: #00a650;
+  margin-bottom: 0.15rem;
+}
+
+.store-link-button {
+  display: inline-block;
+  background-color: #f0f7ff;
+  color: #3483fa;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.store-link-button:hover {
+  background-color: #e6f0fa;
+}

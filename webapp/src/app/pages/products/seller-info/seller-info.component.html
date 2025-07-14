@@ -1,0 +1,28 @@
+<div class="store-info">
+  <div class="store-header-text">Tienda Oficial</div>
+
+  <div class="store-body">
+    <img [src]="storeInfo.logoUrl" alt="{{ storeInfo.name }}" class="store-logo" />
+    <div class="store-name">
+      {{ storeInfo.name }}
+      <i class="pi pi-check-circle verified"></i>
+    </div>
+    <div class="store-sub">Tienda oficial de Mercado Libre</div>
+    <div class="store-products">+{{ storeInfo.products }} Productos</div>
+  </div>
+
+  <hr class="store-divider" />
+
+  <div class="store-indicators">
+    <div class="indicator">
+      <div class="indicator-value">{{ storeInfo.sales }}</div>
+      <div class="indicator-label">Ventas concretadas</div>
+    </div>
+    <div class="indicator" *ngFor="let ind of storeInfo.indicators">
+      <i [class]="ind.icon"></i>
+      <div class="indicator-label">{{ ind.text }}</div>
+    </div>
+  </div>
+
+  <a [href]="storeInfo.storeLink" class="store-link-button">Ir a la Tienda oficial</a>
+</div>

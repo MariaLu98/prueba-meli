@@ -1,0 +1,28 @@
+<div class="product-specs">
+  <h2 class="specs-title">Características del producto</h2>
+
+  <div class="specs-grid">
+    <div *ngFor="let feature of productFeatures" class="spec-item">
+      <i [class]="feature.icon"></i>
+      <div class="spec-text">
+        <div class="spec-label">
+          {{ feature.label }}:
+          <span class="spec-value">{{ feature.value }}</span>
+        </div>
+        <div *ngIf="feature.subValue" class="spec-sub">{{ feature.subValue }}</div>
+
+        <div *ngIf="feature.hasBar" class="size-bar">
+          <span>PEQUEÑO</span>
+          <div class="bar">
+            <div class="filled"></div>
+          </div>
+          <span>GRANDE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="specs-link">
+    <a href="#">Ver todas las características <i class="pi pi-chevron-down"></i></a>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="payment-info">
+  <h2 class="payment-title">Medios de pago</h2>
+
+  <div class="cuotas-banner">
+    <i class="pi pi-credit-card"></i>
+    <span>{{ paymentOptions.cuotasMessage }}</span>
+  </div>
+
+  <div class="payment-section">
+    <h3 class="section-title">Tarjetas de crédito</h3>
+    <p class="section-sub">¡Cuotas sin interés con bancos seleccionados!</p>
+    <div class="logos-row">
+      <img *ngFor="let card of paymentOptions.creditCards" [src]="card.logo" [alt]="card.name" />
+    </div>
+  </div>
+
+  <div class="payment-section">
+    <h3 class="section-title">Tarjetas de débito</h3>
+    <div class="logos-row">
+      <img *ngFor="let card of paymentOptions.debitCards" [src]="card.logo" [alt]="card.name" />
+    </div>
+  </div>
+
+  <div class="payment-section">
+    <h3 class="section-title">Efectivo</h3>
+    <div class="logos-row">
+      <img *ngFor="let method of paymentOptions.cash" [src]="method.logo" [alt]="method.name" />
+    </div>
+  </div>
+
+  <div class="see-more-link">
+    <a href="#">Conoce otros medios de pago</a>
+  </div>
+</div>

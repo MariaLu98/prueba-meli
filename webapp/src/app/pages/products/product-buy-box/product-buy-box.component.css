@@ -1,0 +1,62 @@
+.buy-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 320px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.shipping {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.free-shipping {
+  color: #00a650;
+  font-weight: bold;
+}
+
+.stock {
+  margin-bottom: 1rem;
+}
+
+.available {
+  font-weight: bold;
+}
+
+.available-count {
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.seller {
+  border-top: 1px solid #eee;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.official-store {
+  font-weight: bold;
+}
+
+.sales-count {
+  display: block;
+  color: #555;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.policies p {
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}

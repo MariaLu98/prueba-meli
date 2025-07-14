@@ -1,0 +1,32 @@
+<div class="buy-box">
+  <div class="shipping">
+    <p class="free-shipping">Envío gratis a todo el país</p>
+    <small>Conoce los tiempos y las formas de envío.</small><br>
+    <a href="#">Calcular cuándo llega</a>
+  </div>
+
+  <div class="stock">
+    <p class="available">Stock disponible</p>
+    <label for="quantity">Cantidad:</label>
+    <select id="quantity">
+      <option *ngFor="let qty of quantities" [value]="qty">{{ qty }} unidad{{ qty > 1 ? 'es' : '' }}</option>
+    </select>
+    <small class="available-count">( +{{ stock }} disponibles )</small>
+  </div>
+
+  <div class="actions">
+    <button pButton type="button" label="Comprar ahora" class="p-button-primary"></button>
+    <button pButton type="button" label="Agregar al carrito" class="p-button-outlined"></button>
+  </div>
+
+  <div class="seller">
+    <small class="official-store">Tienda oficial <strong>{{ seller }}</strong></small>
+    <small class="sales-count">+{{ sales }} ventas</small>
+  </div>
+
+  <div class="policies">
+    <p>✅ Devolución gratis. Tienes 30 días desde que lo recibes.</p>
+    <p>✅ Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.</p>
+    <p>✅ 1 año de garantía de fábrica.</p>
+  </div>
+</div>

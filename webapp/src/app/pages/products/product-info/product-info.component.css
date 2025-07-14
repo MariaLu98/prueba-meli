@@ -1,0 +1,109 @@
+.product-specs {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.specs-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+.spec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.spec-item i {
+  font-size: 1.2rem;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.spec-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.spec-value {
+  font-weight: 600;
+  color: #333;
+}
+
+.spec-sub {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Barra de tamaño de pantalla */
+.size-bar {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.size-bar .bar {
+  flex: 1;
+  height: 6px;
+  background-color: #eee;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.size-bar .filled {
+  width: 60%;
+  height: 100%;
+  background-color: #3483fa;
+  border-radius: 3px;
+}
+
+/* Link inferior */
+.specs-link {
+  margin-top: 1rem;
+}
+
+.specs-link a {
+  color: #3483fa;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.specs-link a:hover {
+  text-decoration: underline;
+}
+
+.specs-link i {
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+}

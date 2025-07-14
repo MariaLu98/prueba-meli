@@ -1,0 +1,34 @@
+<div class="samsung-carousel">
+  <h2 class="section-title">Productos de Samsung</h2>
+
+  <p-carousel 
+    [value]="samsungProducts" 
+    [numVisible]="2" 
+    [numScroll]="1" 
+    [circular]="true" 
+    [showIndicators]="false"
+    [showNavigators]="true"
+    contentClass="carousel-content">
+
+    <ng-template pTemplate="item" let-product>
+      <div class="product-card">
+        <img [src]="product.image" [alt]="product.title" class="product-image"/>
+
+        <div class="product-info">
+          <div class="product-title">{{ product.title }}</div>
+          <div class="product-pricing">
+            <span class="old-price">US$ {{ product.priceOld }}</span>
+            <span class="new-price">US$ {{ product.priceNew }}</span>
+            <span class="discount">{{ product.discount }}% OFF</span>
+          </div>
+          <div class="cuotas">{{ product.cuotas }}</div>
+          <div *ngIf="product.envioGratis" class="envio">Envío gratis</div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+
+  <div class="see-more-link">
+    <a href="#">Ver más productos de Samsung</a>
+  </div>
+</div>

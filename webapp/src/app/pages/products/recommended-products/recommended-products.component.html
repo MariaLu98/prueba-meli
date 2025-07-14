@@ -1,0 +1,33 @@
+<div class="related-carousel">
+  <h2 class="title">Productos relacionados</h2>
+  <div class="subtitle">Promocionado</div>
+
+  <p-carousel 
+    [value]="relatedProducts" 
+    [numVisible]="3" 
+    [numScroll]="1" 
+    [circular]="true" 
+    [showIndicators]="false"
+    [showNavigators]="true"
+    contentClass="carousel-content">
+    
+    <ng-template pTemplate="item" let-product>
+      <div class="product-card">
+        <img [src]="product.image" alt="{{ product.title }}" class="product-image"/>
+
+        <div class="product-title">{{ product.title }}</div>
+
+        <div class="product-pricing">
+          <span class="old-price">US$ {{ product.priceOld }}</span>
+          <span class="new-price">US$ {{ product.priceNew }}</span>
+          <span class="discount">{{ product.discount }}% OFF</span>
+        </div>
+
+        <div class="cuotas">{{ product.cuotas }}</div>
+
+        <div *ngIf="product.envioGratis" class="envio">Envío gratis</div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+    

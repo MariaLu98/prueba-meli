@@ -1,0 +1,52 @@
+<div class="product-page-container">
+  <!-- GRID DE DOS COLUMNAS -->
+  <div class="product-page-columns">
+
+    <!-- Columna izquierda (65%) -->
+    <div class="left-column">
+      <!-- SECCIÓN 1: Producto dividido en 2 columnas -->
+      <div class="card-section">
+        <p-card styleClass="product-subsection card-product-left">
+          <app-product-gallery></app-product-gallery>
+        </p-card>        
+      </div>
+      
+      <!-- SECCIÓN 2: Productos de Samsung -->
+      <p-card styleClass="card-section card-samsung">
+      <app-recommended-products></app-recommended-products>
+      <br>
+      <app-related-products></app-related-products>
+      </p-card>
+      
+      <!-- SECCIÓN 3: Características -->
+      <p-card styleClass="card-section card-caracteristicas">
+       <app-product-info></app-product-info>
+      </p-card>
+      
+      <!-- SECCIÓN 4: Descripción -->
+      <p-card styleClass="card-section card-descripcion">
+      <app-product-description></app-product-description>
+      </p-card>
+    </div>
+
+    <!-- Columna derecha (35%) -->
+    <div class="right-column">
+      <p-card styleClass="card-section card-right">
+      <app-product-buy-box></app-product-buy-box>
+      </p-card>
+      
+      <p-card styleClass="card-section card-right">
+       <app-seller-info></app-seller-info>
+      </p-card>
+      
+      <p-card styleClass="card-section card-right">
+  <app-method-payment></app-method-payment>
+      </p-card>
+      
+      <p-card styleClass="card-section card-right">
+       <app-products-list>  </app-products-list>
+      </p-card>
+    </div>
+
+  </div>
+</div>

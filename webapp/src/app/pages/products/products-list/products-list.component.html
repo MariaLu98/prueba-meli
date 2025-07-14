@@ -1,0 +1,19 @@
+<div class="related-list">
+  <h2 class="related-title">Productos relacionados</h2>
+  <div class="related-sub">Promocionado</div>
+
+  <div class="product-item" *ngFor="let product of relatedProducts">
+    <img [src]="product.image" [alt]="product.title" class="product-image" />
+
+    <div class="product-details">
+      <div class="prices">
+        <div class="old-price">US$ {{ product.priceOld }}</div>
+        <div class="new-price">US$ {{ product.priceNew }}</div>
+        <div class="discount">{{ product.discount }}% OFF</div>
+      </div>
+      <div class="cuotas">{{ product.cuotas }}</div>
+      <div class="envio">Envío gratis</div>
+      <div class="product-title">{{ product.title }}</div>
+    </div>
+  </div>
+</div>
