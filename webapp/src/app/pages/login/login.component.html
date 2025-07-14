@@ -1,0 +1,170 @@
+<div class="login-container">
+    <div class="login-box">
+        <h2 class="login-title">Creacion Personas</h2>
+
+        <div class="form-group">
+            <p-iftalabel>
+                <p-iconfield>
+                    <p-inputicon class="pi pi-user"></p-inputicon>
+                    <input pInputText id="username" [(ngModel)]="nombre" autocomplete="off" />
+                </p-iconfield>
+                <label for="username">Nombre</label>
+            </p-iftalabel>
+        </div>
+
+        <div class="form-group">
+            <p-iftalabel>
+                <p-iconfield>
+                    <p-inputicon class="pi pi-envelope"></p-inputicon>
+                    <input pInputText id="email" [(ngModel)]="correo" type="email" autocomplete="off" />
+                </p-iconfield>
+                <label for="email">Correo</label>
+            </p-iftalabel>
+        </div>
+
+        <div class="button-container">
+            <div class="card flex justify-center">
+                <p-toast />
+                <p-splitbutton label="Crear Estudiante" [model]="items" (onClick)="saveEstudiante('info')" raised text
+                    severity="success" />
+            </div>
+        </div>
+    </div>
+
+    <div class="login-box">
+        <h2 class="login-title">Creacion Materias</h2>
+
+        <div class="form-group">
+            <p-floatlabel class="w-full md:w-56" variant="on">
+                <p-select [(ngModel)]="value3" inputId="on_label" [options]="profesores" optionLabel="name" [showClear]="true"
+                    styleClass="w-full" />
+                <label for="on_label">Profesores</label>
+            </p-floatlabel>
+        </div>
+
+        <div class="form-group">
+            <p-iftalabel>
+                <p-iconfield>
+                    <p-inputicon class="pi pi-comment"></p-inputicon>
+                    <input pInputText id="nombreMateria" [(ngModel)]="nombreMateria" autocomplete="off" />
+                </p-iconfield>
+                <label for="nombreMateria">Nombre Materia</label>
+            </p-iftalabel>
+        </div>
+
+        <div class="button-container">
+            <div class="card flex justify-center">
+                <p-toast />
+                <p-button label="Crear Materia" variant="text" [raised]="true" severity="success" (click)="crearMateria()"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-box">
+        <h2 class="login-title">Consultar Estudiante</h2>
+
+        <div class="form-group">
+            <p-floatlabel class="w-full md:w-56" variant="on">
+                <p-select [(ngModel)]="value3" inputId="on_label" [options]="profesores" optionLabel="name" [showClear]="true"
+                    styleClass="w-full" />
+                <label for="on_label">Estudiante</label>
+            </p-floatlabel>
+        </div>
+
+       
+
+        <div class="button-container">
+            <div class="card flex justify-center">
+                <p-toast />
+                <p-button label="Consulta Estudiante" variant="text" [raised]="true" severity="success" (click)="crearMateria()"/>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="card">
+    <button pButton type="button" [label]="mostrarTabla ? 'Ocultar Materias' : 'Ver Materias'"
+        (click)="toggleMaterias()" [disabled]="cargando" [class]="mostrarTabla ? 'p-button-danger' : 'p-button-success'"
+        class="mb-4" style="margin: 1.25rem;"></button>
+
+    <button pButton type="button" [label]="mostrarEstudiantes ? 'Ocultar Estudiantes' : 'Ver Estudiantes'"
+        (click)="toggleEstudiantes()" [disabled]="cargando"
+        [class]="mostrarEstudiantes ? 'p-button-danger' : 'p-button-info'" class="mb-4 me-2" style="margin: 1.25rem;">
+    </button>
+
+    <p-table #dtEstudiantes *ngIf="mostrarEstudiantes && estudiantes.length > 0" [value]="estudiantes"
+        [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5, 10, 20]" [globalFilterFields]="['nombre', 'correo']"
+        [tableStyle]="{ 'min-width': '60rem' }">
+
+        <ng-template pTemplate="caption">
+            <div class="flex justify-end">
+                <p-iftalabel class="flex justify-end" style="width: 25%;">
+                    <p-iconfield>
+                        <p-inputicon class="pi pi-search"></p-inputicon>
+                        <input pInputText id="buscarEstudiante" type="text" (input)="onGlobalFilterEstudiantes($event)"
+                            placeholder="Buscar..." />
+                    </p-iconfield>
+                    <label for="buscarEstudiante">Buscar</label>
+                </p-iftalabel>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Estudiante ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-estudiante>
+            <tr>
+                <td>{{ estudiante.estudianteId }}</td>
+                <td>{{ estudiante.nombre }}</td>
+                <td>{{ estudiante.correo }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <p-table #dt *ngIf="mostrarTabla && materias.length > 0" [value]="materias" [paginator]="true" [rows]="5"
+        [rowsPerPageOptions]="[5, 10, 20]" [globalFilterFields]="['nombre', 'profesor.nombre', 'profesor.correo']"
+        [tableStyle]="{ 'min-width': '60rem' }">
+        <ng-template pTemplate="caption">
+            <div class="flex justify-end">
+                <p-iftalabel class="flex justify-end" style="width: 25%;">
+                    <p-iconfield>
+                        <p-inputicon class="pi pi-search"></p-inputicon>
+                        <input pInputText id="buscarMateria" type="text" (input)="onGlobalFilterMaterias($event)"
+                            placeholder="Buscar..." />
+                    </p-iconfield>
+                    <label for="buscarMateria">Buscar</label>
+                </p-iftalabel>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Materia ID</th>
+                <th>Nombre</th>
+                <th>Créditos</th>
+                <th>Profesor ID</th>
+                <th>Profesor</th>
+                <th>Correo</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-materia>
+            <tr>
+                <td>{{ materia.materiaId }}</td>
+                <td>{{ materia.nombre }}</td>
+                <td>{{ materia.creditos }}</td>
+                <td>{{ materia.profesor?.profesorId }}</td>
+                <td>{{ materia.profesor?.nombre }}</td>
+                <td>{{ materia.profesor?.correo }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "samsung-a55-5g",
+    "title": "Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM",
+    "price": 439,
+    "discount_percentage": 12,
+    "installments": "10 cuotas de $19.14 sin interés",
+    "images": [
+      "https://via.placeholder.com/600x600?text=Samsung+A55+Front",
+      "https://via.placeholder.com/600x600?text=Samsung+A55+Side",
+      "https://via.placeholder.com/600x600?text=Samsung+A55+Back"
+    ],
+    "color": "Azul oscuro",
+    "stock": 100,
+    "description": "Con su potente procesador y 8 GB de RAM...",
+    "seller": {
+      "name": "Samsung",
+      "is_official_store": true,
+      "sales": 5000,
+      "rating": 4.8
+    },
+    "payment_methods": [
+      "Visa",
+      "Mastercard",
+      "OCA",
+      "Efectivo",
+      "12 cuotas sin interés"
+    ],
+    "features": {
+      "screen_size": "6.6\" (16.71 cm x 7.74 cm x 0.82 cm)",
+      "internal_memory": "256 GB",
+      "front_camera": "32 Mpx",
+      "rear_camera": "50 Mpx",
+      "nfc": true,
+      "unlock": "Huella dactilar y reconocimiento facial"
+    }
+  }
+]
