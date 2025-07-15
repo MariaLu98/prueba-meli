@@ -1,6 +1,5 @@
-from dataclasses import dataclass
 from pydantic import BaseModel
-@dataclass
+
 class Features(BaseModel):
     screen_size: str
     internal_memory: str
