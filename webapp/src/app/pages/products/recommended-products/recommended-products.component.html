@@ -3,7 +3,7 @@
   <div class="subtitle">Promocionado</div>
 
   <p-carousel 
-    [value]="relatedProducts" 
+    [value]="recommendedProducts " 
     [numVisible]="3" 
     [numScroll]="1" 
     [circular]="true" 
@@ -13,7 +13,7 @@
     
     <ng-template pTemplate="item" let-product>
       <div class="product-card">
-        <img [src]="product.image" alt="{{ product.title }}" class="product-image"/>
+        <img [src]="product.image" alt="{{ product.title }}" class="product-image"(error)="onImgError($event)"/>
 
         <div class="product-title">{{ product.title }}</div>
 

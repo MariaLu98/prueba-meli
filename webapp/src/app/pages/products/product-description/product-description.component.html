@@ -1,5 +1,5 @@
-<p-panel header="Descripción">
-  <p>
-    Con su potente procesador y 8 GB de RAM, ejecutará varias aplicaciones al mismo tiempo sin demoras.
-  </p>
-</p-panel>
+<div class="product-description" *ngIf="product">
+  <p-panel header="Descripción">
+    <p>{{ product?.description }}</p>
+  </p-panel>
+</div>

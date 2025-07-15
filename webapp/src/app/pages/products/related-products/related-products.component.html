@@ -1,8 +1,8 @@
-<div class="samsung-carousel">
+<div class="samsung-carousel" *ngIf="relatedProducts.length">
   <h2 class="section-title">Productos de Samsung</h2>
 
   <p-carousel 
-    [value]="samsungProducts" 
+    [value]="relatedProducts" 
     [numVisible]="2" 
     [numScroll]="1" 
     [circular]="true" 
@@ -12,7 +12,7 @@
 
     <ng-template pTemplate="item" let-product>
       <div class="product-card">
-        <img [src]="product.image" [alt]="product.title" class="product-image"/>
+        <img [src]="product.image" [alt]="product.title" class="product-image"(error)="onImgError($event)"/>
 
         <div class="product-info">
           <div class="product-title">{{ product.title }}</div>
@@ -21,7 +21,7 @@
             <span class="new-price">US$ {{ product.priceNew }}</span>
             <span class="discount">{{ product.discount }}% OFF</span>
           </div>
-          <div class="cuotas">{{ product.cuotas }}</div>
+          <div class="cuotas">{{ product.installments }}</div>
           <div *ngIf="product.envioGratis" class="envio">Envío gratis</div>
         </div>
       </div>

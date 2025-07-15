@@ -1,9 +1,9 @@
-<div class="related-list">
+<div class="related-list" *ngIf="recommendedProducts.length">
   <h2 class="related-title">Productos relacionados</h2>
   <div class="related-sub">Promocionado</div>
 
-  <div class="product-item" *ngFor="let product of relatedProducts">
-    <img [src]="product.image" [alt]="product.title" class="product-image" />
+  <div class="product-item" *ngFor="let product of recommendedProducts">
+    <img [src]="product.image" [alt]="product.title" class="product-image"(error)="onImgError($event)" />
 
     <div class="product-details">
       <div class="prices">
@@ -11,8 +11,8 @@
         <div class="new-price">US$ {{ product.priceNew }}</div>
         <div class="discount">{{ product.discount }}% OFF</div>
       </div>
-      <div class="cuotas">{{ product.cuotas }}</div>
-      <div class="envio">Envío gratis</div>
+      <div class="cuotas">{{ product.installments }}</div>
+      <div class="envio" *ngIf="product.envioGratis">Envío gratis</div>
       <div class="product-title">{{ product.title }}</div>
     </div>
   </div>

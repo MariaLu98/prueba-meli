@@ -1,4 +1,4 @@
-<div class="payment-info">
+<div class="payment-info" *ngIf="paymentOptions">
   <h2 class="payment-title">Medios de pago</h2>
 
   <div class="cuotas-banner">
@@ -6,25 +6,31 @@
     <span>{{ paymentOptions.cuotasMessage }}</span>
   </div>
 
-  <div class="payment-section">
+  <div class="payment-section" *ngIf="paymentOptions.creditCards?.length">
     <h3 class="section-title">Tarjetas de crédito</h3>
     <p class="section-sub">¡Cuotas sin interés con bancos seleccionados!</p>
     <div class="logos-row">
-      <img *ngFor="let card of paymentOptions.creditCards" [src]="card.logo" [alt]="card.name" />
+      <img *ngFor="let card of paymentOptions.creditCards" 
+           [src]="card.logo" 
+           [alt]="card.name"(error)="onImgError($event)" />
     </div>
   </div>
 
-  <div class="payment-section">
+  <div class="payment-section" *ngIf="paymentOptions.debitCards?.length">
     <h3 class="section-title">Tarjetas de débito</h3>
     <div class="logos-row">
-      <img *ngFor="let card of paymentOptions.debitCards" [src]="card.logo" [alt]="card.name" />
+      <img *ngFor="let card of paymentOptions.debitCards" 
+           [src]="card.logo" 
+           [alt]="card.name"(error)="onImgError($event)" />
     </div>
   </div>
 
-  <div class="payment-section">
+  <div class="payment-section" *ngIf="paymentOptions.cash?.length">
     <h3 class="section-title">Efectivo</h3>
     <div class="logos-row">
-      <img *ngFor="let method of paymentOptions.cash" [src]="method.logo" [alt]="method.name" />
+      <img *ngFor="let method of paymentOptions.cash" 
+           [src]="method.logo" 
+           [alt]="method.name" (error)="onImgError($event)"/>
     </div>
   </div>
 

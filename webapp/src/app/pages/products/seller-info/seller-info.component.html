@@ -1,28 +1,28 @@
-<div class="store-info">
+<div class="store-info" *ngIf="product && product.seller">
   <div class="store-header-text">Tienda Oficial</div>
 
   <div class="store-body">
-    <img [src]="storeInfo.logoUrl" alt="{{ storeInfo.name }}" class="store-logo" />
+    <img [src]="product.seller.logoUrl" alt="{{ product.seller.name }}" class="store-logo" (error)="onImgError($event)"/>
     <div class="store-name">
-      {{ storeInfo.name }}
+      {{ product.seller.name }}
       <i class="pi pi-check-circle verified"></i>
     </div>
     <div class="store-sub">Tienda oficial de Mercado Libre</div>
-    <div class="store-products">+{{ storeInfo.products }} Productos</div>
+    <div class="store-products">+{{ product.seller.products }} Productos</div>
   </div>
 
   <hr class="store-divider" />
 
   <div class="store-indicators">
     <div class="indicator">
-      <div class="indicator-value">{{ storeInfo.sales }}</div>
+      <div class="indicator-value">{{ product.seller.sales }}</div>
       <div class="indicator-label">Ventas concretadas</div>
     </div>
-    <div class="indicator" *ngFor="let ind of storeInfo.indicators">
+    <div class="indicator" *ngFor="let ind of product.seller.indicators">
       <i [class]="ind.icon"></i>
       <div class="indicator-label">{{ ind.text }}</div>
     </div>
   </div>
 
-  <a [href]="storeInfo.storeLink" class="store-link-button">Ir a la Tienda oficial</a>
+  <a [href]="product.seller.storeLink" class="store-link-button">Ir a la Tienda oficial</a>
 </div>

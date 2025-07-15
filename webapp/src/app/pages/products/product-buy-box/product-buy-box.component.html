@@ -1,4 +1,4 @@
-<div class="buy-box">
+<div class="buy-box" *ngIf="product">
   <div class="shipping">
     <p class="free-shipping">Envío gratis a todo el país</p>
     <small>Conoce los tiempos y las formas de envío.</small><br>
@@ -9,9 +9,11 @@
     <p class="available">Stock disponible</p>
     <label for="quantity">Cantidad:</label>
     <select id="quantity">
-      <option *ngFor="let qty of quantities" [value]="qty">{{ qty }} unidad{{ qty > 1 ? 'es' : '' }}</option>
+      <option *ngFor="let qty of quantities" [value]="qty">
+        {{ qty }} unidad{{ qty > 1 ? 'es' : '' }}
+      </option>
     </select>
-    <small class="available-count">( +{{ stock }} disponibles )</small>
+    <small class="available-count">( +{{ product.stock }} disponibles )</small>
   </div>
 
   <div class="actions">
@@ -19,9 +21,11 @@
     <button pButton type="button" label="Agregar al carrito" class="p-button-outlined"></button>
   </div>
 
-  <div class="seller">
-    <small class="official-store">Tienda oficial <strong>{{ seller }}</strong></small>
-    <small class="sales-count">+{{ sales }} ventas</small>
+  <div class="seller" *ngIf="product.seller">
+    <small class="official-store">
+      Tienda oficial <strong>{{ product.seller.name }}</strong>
+    </small>
+    <small class="sales-count">{{ product.seller.sales }} ventas</small>
   </div>
 
   <div class="policies">

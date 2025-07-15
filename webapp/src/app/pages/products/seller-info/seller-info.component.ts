@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from '../../../../domain/product';
+import { ProductService } from '../../../../service/product.service';
 
 @Component({
   selector: 'app-seller-info',
@@ -7,18 +10,23 @@ import { Component } from '@angular/core';
   templateUrl: './seller-info.component.html',
   styleUrl: './seller-info.component.css'
 })
-export class SellerInfoComponent {
-storeInfo = {
-  name: 'Samsung',
-  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg',
-  official: true,
-  products: 50,
-  sales: '+5mil',
-  indicators: [
-    { icon: 'pi pi-check-circle', text: 'Brinda buena atención' },
-    { icon: 'pi pi-clock', text: 'Entrega sus productos a tiempo' }
-  ],
-  storeLink: '#'
-};
+export class SellerInfoComponent  implements OnInit {
+  product?: Product;
 
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    const productId = this.route.snapshot.paramMap.get('id');
+    if (productId) {
+      this.productService.getProductById(productId).subscribe(data => {
+        this.product = data;
+      });
+    }
+  }
+   onImgError(event: Event) {
+  (event.target as HTMLImageElement).src = '';
+}
 }

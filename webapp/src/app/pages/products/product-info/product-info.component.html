@@ -1,8 +1,8 @@
-<div class="product-specs">
+<div class="product-specs" *ngIf="product">
   <h2 class="specs-title">Características del producto</h2>
 
   <div class="specs-grid">
-    <div *ngFor="let feature of productFeatures" class="spec-item">
+    <div *ngFor="let feature of product.features" class="spec-item">
       <i [class]="feature.icon"></i>
       <div class="spec-text">
         <div class="spec-label">

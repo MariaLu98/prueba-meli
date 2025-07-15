@@ -4,7 +4,7 @@ import { ProductPageComponent } from './pages/products/product-page/product-page
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/product/1',
+    redirectTo: '/product/samsung-a55-5g',
     pathMatch: 'full'
   },
   {
@@ -13,6 +13,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/product/1'
+    redirectTo: '/product/samsung-a55-5g'
   }
 ];
