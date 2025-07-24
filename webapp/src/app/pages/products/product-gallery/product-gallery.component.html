@@ -1,29 +1,66 @@
-<div class="producto-grid" *ngIf="product">
-  <div class="galeria-columna">
-    <p-galleria
-      [value]="product.images"
-      [numVisible]="product.images.length"
-      [showItemNavigators]="true"
-      [circular]="true"
-      thumbnailsPosition="left"
-      [containerStyle]="{ 'width': '100%', 'height': '600px' }"
-    >
-      <ng-template #item let-item>
-        <img [src]="item.itemImageSrc" class="gallery-image" [alt]="item.alt" (error)="onImgError($event)"/>
-      </ng-template>
-      <ng-template #thumbnail let-item>
-        <img [src]="item.thumbnailImageSrc" class="gallery-thumbnail" [alt]="item.alt"(error)="onImgError($event)" />
-      </ng-template>
-    </p-galleria>
+<div class="product-layout" *ngIf="product">
+  <!-- CAROUSEL SECTION -->
+  <div class="carousel-section">
+    <div class="carousel-container">
+      
+      <!-- THUMBNAILS COLUMN -->
+      <div class="thumbnails-column">
+        <div 
+          *ngFor="let image of galleryImages; let i = index"
+          class="thumbnail-wrapper"
+          [class.active]="i === currentImageIndex"
+          (click)="selectImage(i)">
+          <img 
+            [src]="image.thumbnailImageSrc" 
+            [alt]="image.alt"
+            (error)="onImgError($event)"
+          />
+        </div>
+      </div>
+      
+      <!-- MAIN IMAGE COLUMN -->
+      <div class="main-image-column">
+        <div class="main-image-wrapper">
+          <img 
+            *ngIf="galleryImages.length > 0"
+            [src]="galleryImages[currentImageIndex].itemImageSrc" 
+            [alt]="galleryImages[currentImageIndex].alt"
+            class="main-image"
+            (error)="onImgError($event)"
+          />
+          
+          <!-- NAVIGATION ARROWS -->
+          <button 
+            *ngIf="galleryImages.length > 1"
+            class="nav-button prev-button"
+            (click)="prevImage()" 
+            [disabled]="currentImageIndex === 0">
+            ←
+          </button>
+          
+          <button 
+            *ngIf="galleryImages.length > 1"
+            class="nav-button next-button"
+            (click)="nextImage()" 
+            [disabled]="currentImageIndex === galleryImages.length - 1">
+            →
+          </button>
+        </div>
+      </div>
+      
+    </div>
   </div>
 
-  <div class="info-columna">
+  <!-- PRODUCT INFO SECTION -->
+  <div class="info-section">
     <h2>{{ product.title }}</h2>
-    <h3 class="precio">US$ {{ product.price }}</h3>
-    <p class="cuotas">{{ product.installments }}</p>
-    <ul>
-      <li *ngFor="let f of product.features">{{ f.label }}: {{ f.value }}</li>
+    <h3 class="price">US$ {{ product.price }}</h3>
+    <p class="installments">{{ product.installments }}</p>
+    <ul class="features">
+      <li *ngFor="let feature of product.features">
+        {{ feature.label }}: {{ feature.value }}
+      </li>
     </ul>
-    <button pButton type="button" label="Comprar"></button>
+    <button class="buy-button">Comprar</button>
   </div>
 </div>

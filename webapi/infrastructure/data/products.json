@@ -6,9 +6,11 @@
     "discount_percentage": 12,
     "installments": "10 cuotas de $19.14 sin interés",
     "images": [
-      "https://via.placeholder.com/600x600?text=Samsung+A55+Front",
-      "https://via.placeholder.com/600x600?text=Samsung+A55+Side",
-      "https://via.placeholder.com/600x600?text=Samsung+A55+Back"
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=600&fit=crop&crop=center"
     ],
     "color": "Azul oscuro",
     "stock": 100,
