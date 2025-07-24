@@ -8,5 +8,5 @@ def get_related_products_router(use_case: GetRelatedProductsUseCase):
     @router.get("/api/related-products")
     async def get_related_products():
         result = use_case.execute()
-        return [item.dict() for item in result]
+        return [item.model_dump() for item in result]
     return router 

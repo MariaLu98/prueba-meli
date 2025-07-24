@@ -8,5 +8,5 @@ def get_recommended_products_router(use_case: GetRecommendedProductsUseCase):
     @router.get("/api/recommended-products")
     async def get_recommended_products():
         result = use_case.execute()
-        return [item.dict() for item in result]
+        return [item.model_dump() for item in result]
     return router 
